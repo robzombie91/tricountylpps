@@ -144,9 +144,12 @@
         </div>
     </div>
 </body>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var dropdownLinks = document.querySelectorAll('.dropdown-content a');
+        var dropdownContent = document.querySelector('.dropdown-content');
+        var dropdown = document.querySelector('.dropdown');
     
         dropdownLinks.forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -168,9 +171,24 @@
                     .catch(function(error) {
                         document.querySelector('#content').innerHTML = '<p>Error: the requested page could not be loaded.</p>';
                     });
+                
+                // Hide the dropdown after clicking a link
+                dropdownContent.style.display = 'none';
             });
         });
+
+        // Show the dropdown when hovering over the parent
+        dropdown.addEventListener('mouseover', function() {
+            dropdownContent.style.display = 'block';
+        });
+
+        // Hide the dropdown when the mouse is not over the parent
+        dropdown.addEventListener('mouseout', function() {
+            dropdownContent.style.display = 'none';
+        });
     });
-    </script>
+</script>
+
+
     
 </html>
