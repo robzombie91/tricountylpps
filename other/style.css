@@ -1,0 +1,198 @@
+:root {
+    /* Color scheme */
+    --primary-color: #600;
+    --secondary-color: #03C;
+    --hover-color: #B91319;
+    --footer-color: #FFF;
+    --footer-hover-color: #FF3;
+    --footer-designer-link-color: #555;
+    --footer-designer-hover-color: #600;
+    --background-color: #EEE;
+    --white-color: #FFF;
+
+    /* Font */
+    --font-family-default: Arial, Helvetica, sans-serif;
+    --font-family-open-sans: 'Open Sans', Arial, Helvetica, sans-serif;
+    --font-family-verdana: Verdana, sans-serif;
+
+    /* Dimensions */
+    --navbar-padding: 10px;
+    --content-margin: 1.4em 0;
+    --content-line-height: 1.4em;
+}
+
+body {
+    font-family: var(--font-family-default);
+    background: var(--background-color);
+}
+
+.wrapper {
+    width: 960px;
+    margin: 10px auto;
+    padding: 0;
+    border: 1px solid #F0F0F0;
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.4);
+    background: var(--white-color);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.header {
+    grid-row: 1;
+    height: 120px;
+    text-align: center;
+    border-bottom: 10px solid var(--white-color);
+    background: var(--white-color);
+}
+
+.main-navigation, .sub-navigation {
+    grid-row: 2;
+    font: 1.1em Helvetica, sans-serif;
+    text-align: center;
+    padding: var(--navbar-padding) 0;
+}
+
+.main-navigation {
+    color: var(--primary-color);
+    background: #BBB url(images/main-navigation-background-01.png) repeat-x;
+    border: 1px solid #555;
+}
+
+.sub-navigation {
+    color: #B11D3A;
+    background: #EDEDED;
+    border-bottom: 1px solid #333;
+}
+
+.page {
+    grid-row: 3;
+    padding: 20px;
+    min-height: 450px;
+}
+
+.footer {
+    grid-row: 4;
+    font: 0.8em var(--font-family-verdana);
+    color: var(--footer-color);
+    background: var(--primary-color);
+    border-top: 2px solid #BBB;
+    overflow: auto;
+}
+
+/* Continuing from where we left off... */
+
+.main-navigation ul,
+.sub-navigation ul {
+    margin: 0;
+    padding: var(--navbar-padding) 0;
+    list-style: none; 
+}
+
+.main-navigation li,
+.sub-navigation li {
+    margin: 0;
+    padding: 0 24px;
+    display: inline;
+    border-right: 1px solid #999;
+}
+
+.main-navigation li:first-child {
+    border-left: 1px solid #999;  
+}
+
+.main-navigation a:link, 
+.main-navigation a:visited,
+.sub-navigation a:link, 
+.sub-navigation a:visited {
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-navigation a:hover,
+.sub-navigation a:hover {
+    color: var(--white-color);
+}
+
+/* --- page --- */
+.page {
+    clear: both;
+    padding: 20px;
+    min-height: 450px;
+}
+
+/* --- sidebars --- */
+.sidebar-left {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-right {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- content --- */
+.content {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    font-family: var(--font-family-default);
+}
+
+.content h1 {
+    margin: 0 0 1.0em 0;
+    font: bold 1.9em var(--font-family-open-sans);
+    color: var(--primary-color);
+}
+
+/* ... and so on, replacing hard-coded values with variables wherever possible ... */
+
+/* --- footer --- */
+.footer {
+    clear: both;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    background: var(--primary-color);
+    border-top: 2px solid #BBB;
+    font: 0.8em var(--font-family-verdana);
+    color: var(--footer-color);
+    overflow: auto;
+}
+
+.footer p {
+    margin: 0 0 4px 0;
+    padding: 0;    
+}
+
+.footer a:link, .footer a:visited {
+    color: var(--footer-color);
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: var(--footer-hover-color);
+}
+
+.footer-designer {
+    clear: both;
+    margin: 5px auto 10px auto;
+    padding: 0 2px;
+    width: 960px;
+    font: 0.8em var(--font-family-verdana);
+    color: #777;
+}
+
+.footer-designer a:link, .footer-designer a:visited {
+    color: var(--footer-designer-link-color); 
+}
+
+.footer-designer a:hover {
+    color: var(--footer-designer-hover-color);  
+}
+
