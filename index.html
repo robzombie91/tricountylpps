@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
         }
-        #header, .navigation, #content, #footer {
+
+        #header,
+        .navigation,
+        #content,
+        #footer {
             max-width: 1300px;
             margin: auto;
             width: 95%;
         }
-        #header {
-            background: url('https://robzombie91.github.io/tricountylpps/services/tri-county-web-banner.jpg') no-repeat center center; 
-            background-size: 430px auto;
-            text-align: center;
-            height: 73px;
-            background-color: #EEEEEE;
+
+        #header-desktop,
+        #header-mobile {
+            height: 200px;
+            max-width: 1300px;
+            margin: auto;
+            width: 95%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             border-left: 1px solid black;
             border-right: 1px solid black;
-            border-top: 1px solid black;
         }
+
+        #header-desktop {
+            background-image: url('services/tri-county-web-banner-dt.jpg');
+        }
+
+        #header-mobile {
+            background-image: url('services/tri-county-web-banner.jpg');
+            background-size: 100% 100%;
+        }
+
+
+
         #header-link {
             display: block;
             height: 100%;
@@ -35,6 +56,24 @@
             max-width: 100%;
             height: auto;
         }
+
+        @media screen and (min-width: 769px) {
+            #header-mobile {
+                display: none;
+            }
+        }
+
+        /* Small screens */
+        @media screen and (max-width: 768px) {
+            #header-desktop {
+                display: none;
+            }
+
+            #header-mobile {
+                display: block;
+            }
+        }
+
         .navigation {
             background-color: #888888;
             background-image: url('https://robzombie91.github.io/tricountylpps/main-navigation-background-01.png');
@@ -43,9 +82,11 @@
             text-align: center;
             border: 1px solid #000000;
             font-size: 0.9em;
-            box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .navigation a, .dropdown-content a {
+
+        .navigation a,
+        .dropdown-content a {
             margin: 0 2px;
             text-decoration: none;
             color: darkred;
@@ -54,22 +95,28 @@
             padding-right: 14px;
             font-size: 0.9em;
         }
-        .navigation a:last-child, .dropdown-content a:last-child {
+
+        .navigation a:last-child,
+        .dropdown-content a:last-child {
             border-right: none;
         }
-        .navigation a:hover, .dropdown-content a:hover {
+
+        .navigation a:hover,
+        .dropdown-content a:hover {
             color: white;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             left: 50%;
             transform: translateX(-50%);
         }
+
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
@@ -77,23 +124,28 @@
             display: block;
             text-align: center;
         }
+
         .dropdown-content a:hover {
             color: white;
             background-color: #999999;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         #content {
             padding: 15px;
             text-align: justify;
             background-color: #EEEEEE;
         }
+
         #content p {
             font-size: 18px;
             color: #333333;
             line-height: 1.6;
         }
+
         #footer {
             background-color: #660000;
             color: #ffffff;
@@ -105,43 +157,66 @@
             gap: 10px;
             align-items: center;
         }
+
         #footer a {
             color: #ff7a00;
             text-decoration: none;
         }
+
         #footer a:hover {
             color: #ffffff;
         }
+
         /* Adjusted padding and text alignment for dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
         }
+
+        table {
+            width: 100%;
+        }
+
+        table td {
+            padding: 10px;
+            text-align: left;
+        }
     </style>
 </head>
+
 <body>
-    <div id="header">
+    <div id="header-desktop">
         <a href="index.html" id="header-link">
-    </a>
+        </a>
+    </div>
+    <div id="header-mobile">
+        <a href="index.html" id="header-link"></a>
     </div>
     <div class="navigation">
-            <a href="pricing.html">Pricing</a>
+        <a href="pricing.html">Pricing</a>
         <div class="dropdown">
             <a href="#Services">Services</a>
             <div class="dropdown-content">
                 <a href="services/first-class.html">First Class Mail</a>
-                <a href="#Service2">Standard Mail</a>
-                <a href="#Service3">Flat Mail</a>
-                <a href="#Service4">Fulfillent Services</a>
+                <a href="services/standard-mail.html">Standard Mail</a>
+                <a href="services/flat-mail.html">Flat Mail</a>
+                <a href="services/ful-service.html">Fulfillent Services</a>
             </div>
         </div>
     </div>
     <div id="content">
-        <p>Welcome to Tri-County Letter/Parcel Presort Service, Inc. (TCLPPS).  We are a full service mail presort bureau that has been serving the area for over 30 years.  Our goal is to provide our customers with a way to save money on their postage, as well as offer our services to ease the sometimes tedious and time-consuming tasks of mail fulfillment.</p>
+        <p>Welcome aboard! This is Tri-County Letter/Parcel Presort Service, Inc. (TCLPPS), your trusty mail presort
+            bureau for over 30 years. Our aim is pretty simple: we want to save you money on your postage and make mail
+            fulfillment as painless as possible.
 
-        <p>There have been many changes in the mail system of the United States Postal Service over the years and we do our utmost to keep our customers informed every step of the way.  However, it is still a very simple, easy way to find savings in what we, as local businesses, do every day.  Our knowledgeable, friendly and helpful staff does its best to identify and inform our customers of the most efficient and effective way to send their mail.</p>
+            With all the changes happening in the United States Postal Service, it's a whole lot to keep up with, but
+            we've got your back. We stay up-to-date, so you don't have to sweat the details. We strive to help local
+            businesses like yours find easy and effective ways to cut costs. Our dedicated team, they're more than just
+            knowledgeable, they're proactive in finding and sharing the best mailing strategies for you.
 
-        <p>We are committed to our purpose and believe that pennies do add up.  We facilitate over a quarter of a million dollars in postage savings per year for our customers.  We hope you enjoy being a part of this beneficial service and we look forward to serving you for years to come.</p>
+            We take our job seriously, knowing that every penny saved matters. We're talking about over a quarter of a
+            million dollars in postage savings every year for customers like you. So, here's to a prosperous
+            partnership. We're ready to support your business and look forward to serving you in the coming years. </p>
 
         <p><br><br>Dawn R. Kagiavas</p>
         <p>President/CEO</p>
@@ -151,11 +226,12 @@
             Tri-County Letter/Parcel Presort Service, Inc.
         </div>
         <div>
-            <a href="https://www.google.com/maps/search/?api=1&query=2904+Shannon+Road+Erie+Pennsylvania+16510-2860" target="_blank">2904 Shannon Road - Erie, Pennsylvania 16510-2860</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=2904+Shannon+Road+Erie+Pennsylvania+16510-2860"
+                target="_blank">2904 Shannon Road - Erie, Pennsylvania 16510-2860</a>
         </div>
         <div>
             Phone: <a href="tel:+18148990223">(814) 899-0223</a> - Fax: (814) 899-0237
-        </div>        
+        </div>
         <div>
             <a href="mailto:info@tricountylpps.com">info@tricountylpps.com</a>
         </div>
@@ -163,49 +239,49 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var dropdownLinks = document.querySelectorAll('.dropdown-content a');
         var dropdownContent = document.querySelector('.dropdown-content');
         var dropdown = document.querySelector('.dropdown');
-    
-        dropdownLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
+
+        dropdownLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
-    
+
                 var url = e.target.getAttribute('href');
-    
+
                 fetch(url)
-                    .then(function(response) {
+                    .then(function (response) {
                         if (response.ok) {
                             return response.text();
                         } else {
                             throw new Error('Failed to load content');
                         }
                     })
-                    .then(function(data) {
+                    .then(function (data) {
                         document.querySelector('#content').innerHTML = data;
                     })
-                    .catch(function(error) {
+                    .catch(function (error) {
                         document.querySelector('#content').innerHTML = '<p>Error: the requested page could not be loaded.</p>';
                     });
-                
+
                 // Hide the dropdown after clicking a link
                 dropdownContent.style.display = 'none';
             });
         });
 
         // Show the dropdown when hovering over the parent
-        dropdown.addEventListener('mouseover', function() {
+        dropdown.addEventListener('mouseover', function () {
             dropdownContent.style.display = 'block';
         });
 
         // Hide the dropdown when the mouse is not over the parent
-        dropdown.addEventListener('mouseout', function() {
+        dropdown.addEventListener('mouseout', function () {
             dropdownContent.style.display = 'none';
         });
     });
 </script>
 
 
-    
+
 </html>
