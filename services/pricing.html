@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mail Cost Calculator</title>
+    <style>
+        .calculator-container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        }
+        #numberOfPieces, #piecesInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #totalCost {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Mail Cost Calculator</h2>
+        <input id="numberOfPieces" type="range" min="0" max="999999" value="0" oninput="updateSliderValue(this.value)">
+        <input id="piecesInput" type="number" min="0" max="999999" value="0" oninput="updateSliderValue(this.value)">
+        <p id="sliderValue">Number of pieces: 0</p>
+        <button onclick="calculate()">Calculate</button>
+        <p id="totalCost"></p>
+    </div>
+    
+    <script>
+        function calculate() {
+            var costPerPiece = 0.66;
+            var discountPerPiece = 0.11;
+            var numberOfPieces = document.getElementById('numberOfPieces').value;
+            var totalCost = (costPerPiece - discountPerPiece) * numberOfPieces;
+            document.getElementById('totalCost').innerHTML = "Total Cost: $" + totalCost.toFixed(2);
+        }
+        
+        function updateSliderValue(val) {
+            document.getElementById('numberOfPieces').value = val;
+            document.getElementById('piecesInput').value = val;
+            document.getElementById('sliderValue').innerHTML = "Number of pieces: " + val;
+        }
+    </script>
+</body>
+</html>
