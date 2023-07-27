@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mail Cost Calculator</title>
+    <!-- Adding Bootstrap CSS for styling -->
+    <style>
+        .calculator-container {
+            width: 380px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        }
+        #numberOfPieces, #piecesInput, #serviceType {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #totalCost {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Mail Cost Calculator</h2>
+        <select id="serviceType" class="form-control">
+            <option value="0.5">First Class</option>
+            <option value="1.0">Priority Mail</option>
+            <option value="2.0">Express Mail</option>
+        </select>
+        <input id="numberOfPieces" type="range" min="0" max="999999" value="0" oninput="updateSliderValue(this.value)">
+        <input id="piecesInput" type="number" min="0" max="999999" value="0" oninput="updateSliderValue(this.value)">
+        <p id="sliderValue">Number of pieces: 0</p>
+        <button onclick="calculate()">Calculate</button>
+        <p id="totalCost"></p>
+        <p id="discount"></p>
+    </div>
+    
+    <script>
+        
+    </script>
+</body>
+</html>
