@@ -15,16 +15,20 @@
       max-width: 1080px;
       margin: 0 auto;
     }
+    #header-desktop, #header-mobile {
+      max-width: 100%;
+      height: auto;
+    }
     #content {
       padding: 20px;
     }
     .navigation {
       display: flex;
-      justify-content: space-around;
       padding: 10px;
     }
     .dropdown {
       position: relative;
+      margin-right: 20px;
     }
     .dropdown-content {
       display: none;
@@ -45,10 +49,14 @@
 </head>
 <body>
   <div id="header-desktop">
-    <a href="index.html" id="header-link"></a>
+    <a href="index.html" id="header-link">
+      <img src="services/tri-county-web-banner-dt.jpg" alt="Tri-County Letter/Parcel Presort Service, Inc." style="max-width: 100%; height: auto;">
+    </a>
   </div>
   <div id="header-mobile">
-    <a href="index.html" id="header-link"></a>
+    <a href="index.html" id="header-link">
+      <img src="services/tri-county-web-banner-dt.jpg" alt="Tri-County Letter/Parcel Presort Service, Inc." style="max-width: 100%; height: auto;">
+    </a>
   </div>
   <div class="navigation">
     <div class="dropdown">
